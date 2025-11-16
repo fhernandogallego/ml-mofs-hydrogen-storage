@@ -1,0 +1,11 @@
+# Results and generated artifacts
+results/*
+!results/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.venv
