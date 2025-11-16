@@ -151,41 +151,33 @@ The supplementary information (SI) for this work is entirely contained within th
 
 ### Methodology Overview
 
-The optimization of hydrogen storage materials has been conducted using an advanced regression methodology inspired by recent breakthroughs in materials informatics [1]. This approach, combining linear regression techniques with domain-specific constraints, aligns closely with the techniques outlined in [2], where a combination of physical constraints and predictive modeling was used to optimize functional properties of materials.
-
-The present work focuses on achieving two critical targets for hydrogen storage materials:
+This repository applies regression models with domain-specific constraints to meet two hydrogen storage targets:
 
 1. **Double tank targets:** `usablevc ≥ 0.020 kg/L` and `usablegc = 5.5 wt. %`.
 2. **2025 targets:** `usablevc ≥ 0.040 kg/L` and `usablegc = 5.5 wt. %`.
 
-These targets were approached by applying regression models to a dataset of 100 materials characterized by properties including `density`, `porosity`, `Ri`, `SSA`, and `specific pore volume`. The methodology integrates physical, strict, and qualitative constraints, ensuring realistic and physically achievable predictions.
+The models use a dataset of 100 materials characterized by `density`, `porosity`, `Ri`, `SSA`, and `specific pore volume`, combined with physical, strict, and qualitative constraints to keep predictions realistic.
 
 ---
 
 ### Mathematical Framework
 
-Linear regression establishes a predictive relationship between a dependent variable \( y \) and a set of independent variables \( \mathbf{X} \). The model is expressed as:
+Linear regression models a dependent variable `y` as a weighted sum of input features plus an error term:
 
-\[
-y = \beta_0 + \sum_{i=1}^{p} \beta_i x_i + \epsilon
-\]
+`y = beta_0 + beta_1 * x_1 + ... + beta_p * x_p + epsilon`
 
 Where:
-- \( y \): Dependent variable (e.g., usablegc or usablevc).
-- \( x_i \): Independent variables (e.g., density, porosity, specific surface area).
-- \( \beta_0 \): Intercept term.
-- \( \beta_i \): Coefficients for each independent variable.
-- \( \epsilon \): Error term capturing residual variability.
+- `y`: dependent variable (e.g., `usablegc` or `usablevc`).
+- `x_i`: independent variables (e.g., density, porosity, specific surface area).
+- `beta_0`: intercept term.
+- `beta_i`: coefficients for each independent variable.
+- `epsilon`: error term capturing residual variability.
 
-The coefficients \( \beta_i \) are estimated by minimizing the Residual Sum of Squares (RSS):
+The coefficients are estimated by minimizing the Residual Sum of Squares (RSS):
 
-\[
-RSS = \sum_{i=1}^{n} \left(y_i - \hat{y}_i\right)^2
-\]
+`RSS = sum_i (y_i - y_hat_i)^2`
 
-Here, \( y_i \) represents the observed values, and \( \hat{y}_i \) represents the predicted values based on the model.
-
-To ensure the model aligns with the physical constraints of hydrogen storage materials, regularization techniques such as Ridge Regression or LASSO can be employed. These methods penalize large coefficients, reducing overfitting and enhancing interpretability.
+Regularization (Ridge or Lasso) penalizes large coefficients to reduce overfitting and improve interpretability while respecting physical constraints.
 
 ---
 
@@ -225,7 +217,7 @@ The densities of materials (e.g., MOFs) generally fall between 0.1–4.1 kg/L, c
 
 ### Implementation Details
 
-The methodology was applied to a dataset comprising the physical and chemical properties of 100 materials. Following preprocessing (normalization, outlier removal), the dataset was split into training (70%) and testing (30%) subsets. Model performance was evaluated using metrics such as the coefficient of determination (\( R^2 \)) and Mean Absolute Error (MAE).
+The methodology was applied to a dataset comprising the physical and chemical properties of 100 materials. Following preprocessing (normalization, outlier removal), the dataset was split into training (70%) and testing (30%) subsets. Model performance was evaluated using metrics such as the coefficient of determination (R²) and Mean Absolute Error (MAE).
 
 Additionally, techniques like cross-validation and hyperparameter tuning (e.g., using grid search) ensured robustness and minimized overfitting.
 
