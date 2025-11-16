@@ -234,53 +234,34 @@ Additionally, techniques like cross-validation and hyperparameter tuning (e.g., 
 ### Results for Key Targets
 
 #### Target 3: Double Tank Volume Targets
-**Objectives:**
-- \( \text{usablevc} \geq 0.020 \, \text{kg/L} \),
-- \( \text{usablegc} = 5.5 \, \text{wt. %} \).
+**Objectives**
+- usablevc ≥ 0.020 kg/L
+- usablegc = 5.5 wt. %
 
-**Results:**
-- \( \text{density} = 0.3000 \),
-- \( \text{porosity} = 0.5000 \),
-- \( R_i = 15.0000 \),
-- \( \text{SSA} = 6000.0 \) (upper limit met),
-- \( \text{specific pore volume} = 2.0000 \).
+**Results**
+- density: 0.3000
+- porosity: 0.5000
+- Ri: 15.0000 Å
+- SSA: 6000.0 m²/g (upper limit met)
+- specific pore volume: 2.0000 cm³/g
 
-**Capacities:**
-- \( \text{usablevc} \approx 0.0168 \, \text{kg/L} \) (below target),
-- \( \text{usablegc} \approx 5.14 \, \text{wt. %} \) (slightly below target).
+**Capacities**
+- usablevc ≈ 0.0168 kg/L (below target)
+- usablegc ≈ 5.14 wt. % (slightly below target)
 
 #### Target 4: Double Heavy Tank Targets
-**Objectives:**
-- \( \text{usablevc} \geq 0.020 \, \text{kg/L} \),
-- \( \text{usablegc} \geq 0.5 \, \text{wt. %} \).
+**Objectives**
+- usablevc ≥ 0.020 kg/L
+- usablegc ≥ 0.5 wt. %
 
-**Results:**
-- \( \text{density} = 0.4201 \),
-- \( \text{porosity} = 0.7674 \),
-- \( R_i = 10.2324 \),
-- \( \text{SSA} = 5000.2 \),
-- \( \text{specific pore volume} = 1.3072 \).
+**Results**
+- density: 0.4201
+- porosity: 0.7674
+- Ri: 10.2324 Å
+- SSA: 5000.2 m²/g
+- specific pore volume: 1.3072 cm³/g
 
-**Capacities:**
-
-- \( \text{usablevc} \approx 0.0200 \, \text{kg/L} \) (meets target),
-- \( \text{usablegc} \approx 3.46 \, \text{wt. %} \) (well above minimum).
-
----
-
-### Relevance to Small Data Challenges
-
-This work aligns with the "small data" paradigm described in [1], where machine learning models are tailored for datasets with limited samples but high-quality, domain-specific information. This approach leverages:
-1. Feature engineering to maximize predictive power.
-2. Physical constraints to reduce the search space.
-3. Domain-informed priors, as discussed in [2], to improve model generalization.
-
----
-
-### References
-
-[1] Nature, "Small data for material discovery," *Nature*, vol. 615, pp. 123–134, 2024.
-[2] T. Xie and J. C. Grossman, "Crystal Graph Convolutional Neural Networks for Material Properties," *Physical Review Letters*, vol. 120, no. 14, p. 145301, 2018.
-[3] M. Smith et al., "Data-Driven Material Optimization," *Science Advances*, vol. 9, no. 3, pp. 567–578, 2023.
-[4] S. M. Wood et al., "Machine Learning for Energy Storage Materials," *Journal of Energy Materials*, vol. 12, no. 2, pp. 245–260, 2023.
+**Capacities**
+- usablevc ≈ 0.0200 kg/L (meets target)
+- usablegc ≈ 3.46 wt. % (well above minimum)
 
