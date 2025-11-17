@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.venv
+
+# Generated model binaries
+results/*.joblib
+
+# Generated figures (not tracked)
+results/*.png
