@@ -1,0 +1,15 @@
+# Results and generated artifacts
+results/*
+!results/.gitkeep
+!results/ridge_model.joblib
+!results/lasso_model.joblib
+!results/rf_model.joblib
+!results/README.md
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.venv
