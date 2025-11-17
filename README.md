@@ -46,7 +46,7 @@ This work focuses on predicting structural parameters of Metal-Organic Framework
 - Usable volumetric capacity: `uvc ≥ 0.020 kg/L`
 
 ### Target 3: Relaxed gravimetric condition
-- Usable gravimetric capacity: `ugc ≥ 0.5 wt. %`
+- Usable gravimetric capacity: `ugc ≥ 2.75 wt. %`
 - Usable volumetric capacity: `uvc ≥ 0.020 kg/L`
 
 All models were trained on a dataset of 106 simulated MOFs using GCMC (Grand Canonical Monte Carlo) simulations and were designed to generalize to unseen structures via extrapolation and inverse design.
@@ -156,7 +156,7 @@ This repository applies regression models with domain-specific constraints to me
 1. **Double tank targets:** `usablevc ≥ 0.020 kg/L` and `usablegc = 5.5 wt. %`.
 2. **2025 targets:** `usablevc ≥ 0.040 kg/L` and `usablegc = 5.5 wt. %`.
 
-The models use a dataset of 100 materials characterized by `density`, `porosity`, `Ri`, `SSA`, and `specific pore volume`, combined with physical, strict, and qualitative constraints to keep predictions realistic.
+The models use a dataset of 106 materials characterized by `density`, `porosity`, `Ri`, `SSA`, and `specific pore volume`, combined with physical, strict, and qualitative constraints to keep predictions realistic.
 
 ---
 
@@ -166,18 +166,13 @@ Linear regression models a dependent variable `y` as a weighted sum of input fea
 
 `y = beta_0 + beta_1 * x_1 + ... + beta_p * x_p + epsilon`
 
-Where:
-- `y`: dependent variable (e.g., `usablegc` or `usablevc`).
-- `x_i`: independent variables (e.g., density, porosity, specific surface area).
-- `beta_0`: intercept term.
-- `beta_i`: coefficients for each independent variable.
-- `epsilon`: error term capturing residual variability.
+Here `y` is the target (e.g., usablegc or usablevc), `x_i` are the input features (density, porosity, specific surface area, etc.), `beta_0` is the intercept, `beta_i` are the coefficients, and `epsilon` captures residual variability.
 
-The coefficients are estimated by minimizing the Residual Sum of Squares (RSS):
+Coefficients are estimated by minimizing the residual sum of squares:
 
-`RSS = sum_i (y_i - y_hat_i)^2`
+`RSS = Σ (y_i - y_hat_i)^2`
 
-Regularization (Ridge or Lasso) penalizes large coefficients to reduce overfitting and improve interpretability while respecting physical constraints.
+Regularization (Ridge or Lasso) penalizes large coefficients to reduce overfitting and keeps the solutions physically reasonable.
 
 ---
 
