@@ -28,7 +28,8 @@ ml-mofs-hydrogen-storage/
    ```bash
    python -m src.run_all
    ```
-   All artifacts (trained models, metrics, bootstrap intervals, and figures) are saved under `results/`.
+   This trains all models, overwrites the placeholder `.joblib` files, and writes the diagnostics under `results/` (including
+   parity and residual PNG plots, CSV metrics, and bootstrap confidence intervals).
 
 ### 📏 Evaluation protocol
 **Evaluation protocol.** Final performance was assessed on the held-out test set using the coefficient of determination (R<sup>2</sup>) and Mean Absolute Error (MAE). We report point estimates in the main text; 95% confidence intervals via bootstrap (1,000 resamples) and additional diagnostics (residual plots vs. predictions and vs. key features, learning curves, and y-scrambling tests) are provided in the Supplementary Information (SI). Physical plausibility was checked post hoc against known constraints on descriptors and trends from the literature.
