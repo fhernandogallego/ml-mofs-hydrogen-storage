@@ -147,6 +147,21 @@ The supplementary information (SI) for this work is entirely contained within th
 - Figures and capacity tables
 - Dataset and candidate configurations
 
+### Diagnostic figures (generated locally)
+
+Running `python -m src.run_all` produces four PNG figures in `results/` that support the SI discussion:
+
+- **Ridge parity plot (`parity_ridge_ugc.png`)** – predicted vs. true usable gravimetric capacity (ugc) with the 45° reference
+  line, showing the tight agreement of the Ridge model on the held-out test set.
+- **Lasso parity plot (`parity_lasso_uvc.png`)** – predicted vs. true usable volumetric capacity (uvc), illustrating the lower
+  but acceptable fit for the volumetric target.
+- **Ridge residuals (`residuals_ridge_ugc.png`)** – residuals vs. predicted ugc, confirming no dominant bias and well-behaved
+  dispersion around zero.
+- **Lasso residuals (`residuals_lasso_uvc.png`)** – residuals vs. predicted uvc, used to diagnose variance patterns for the
+  volumetric model.
+
+These plots are regenerated locally (not versioned) and belong to the SI diagnostics referenced in the evaluation protocol.
+
 ---
 
 ## 📄 Appendix: Full Technical Description
