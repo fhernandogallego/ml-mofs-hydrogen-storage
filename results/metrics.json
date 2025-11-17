@@ -1,0 +1,27 @@
+{
+  "ridge": {
+    "r2": 0.9644275261638534,
+    "mae": 0.1497745125995336,
+    "best_params": {
+      "model__alpha": 0.01
+    }
+  },
+  "lasso": {
+    "r2": 0.5504525155452731,
+    "mae": 0.0016815930733204375,
+    "best_params": {
+      "model__alpha": 0.0001,
+      "model__max_iter": 5000
+    }
+  },
+  "rf": {
+    "r2": 0.9712838321943387,
+    "mae": 0.1464916666666668,
+    "best_params": {
+      "model__max_depth": null,
+      "model__min_samples_leaf": 1,
+      "model__n_estimators": 300,
+      "model__random_state": 42
+    }
+  }
+}
