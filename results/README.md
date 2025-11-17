@@ -1,10 +1,11 @@
-Placeholder artifacts
-====================
-
-Due to repository size limits, trained model binaries are provided as lightweight placeholders. Regenerate them locally with:
+Results contents
 
 ```
 python -m src.run_all
 ```
 
-This will overwrite the placeholder `.joblib` files with the actual trained models and populate metrics/plots in this folder.
+Key artifacts include the parity and residual plots, along with CSV/JSON metrics files. Model binaries (`*.joblib`) and PNG
+figures are generated locally when you run the command above but are ignored by Git to avoid committing binary blobs. After
+running, you will find the four parity/residual PNGs in this folder for review.
+
+Feel free to rerun the command above to regenerate or update the outputs from the dataset in `data/`.
