@@ -60,7 +60,17 @@ def make_train_test_split(
     their distributions balanced across splits.
     """
 
-    strat_labels = build_stratification_labels(df, n_bins=n_bins)
+    strat_labels = None
+    # Try to build stratification labels; if any bin is underpopulated (<2),
+    # progressively reduce the number of bins. If no valid stratification is
+    # possible, fall back to an unstratified split to avoid runtime errors on
+    # small datasets.
+    for bins in range(n_bins, 1, -1):
+        labels = build_stratification_labels(df, n_bins=bins)
+        if labels.value_counts().min() >= 2:
+            strat_labels = labels
+            break
+
     train_df, test_df = train_test_split(
         df,
         test_size=test_size,
